@@ -15,33 +15,43 @@ public class BookController {
     @Autowired
     private BookRepository repository;
 
+    @Autowired
+    private CategoryRepository crepository;
+
+    // Show all books
     @RequestMapping(value="/booklist")
     public String bookList(Model model) {
         model.addAttribute("books", repository.findAll());
         return "booklist";
     }
 
+    // Add new book
     @RequestMapping(value="/add")
     public String addBook(Model model) {
         model.addAttribute("book", new Book());
+        model.addAttribute("categories", crepository.findAll());
         return "addbook";
     }
 
+    // Save new book
     @RequestMapping(value="/save", method = RequestMethod.POST)
     public String save(Book book) {
         repository.save(book);
         return "redirect:booklist";
     }
 
+    // Delete book
     @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable("id") Long id, Model model) {
         repository.delete(id);
         return "redirect:../booklist";
     }
 
+    // Edit book
     @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
     public String editBook(@PathVariable("id") Long id, Model model) {
         model.addAttribute("book", repository.findOne(id));
+        model.addAttribute("categories", crepository.findAll());
         return "editbook";
     }
 
