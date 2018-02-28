@@ -1,5 +1,7 @@
 package com.example.BookStore.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class Book {
     private double price;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "categoryId")
     private Category category;
 
