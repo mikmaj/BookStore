@@ -1,9 +1,9 @@
 package com.example.BookStore;
 
-import com.example.BookStore.controller.BookRepository;
+import com.example.BookStore.repository.BookRepository;
 import com.example.BookStore.model.Book;
 import com.example.BookStore.model.Category;
-import com.example.BookStore.controller.CategoryRepository;
+import com.example.BookStore.repository.CategoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

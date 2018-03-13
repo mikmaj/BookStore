@@ -1,4 +1,4 @@
-package com.example.BookStore.controller;
+package com.example.BookStore.repository;
 
 import com.example.BookStore.model.Category;
 

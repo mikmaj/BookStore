@@ -3,7 +3,8 @@ package com.example.BookStore.controller;
 import java.util.List;
 
 import com.example.BookStore.model.Book;
-import com.example.BookStore.controller.BookRepository;
+import com.example.BookStore.repository.BookRepository;
+import com.example.BookStore.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
